@@ -1,10 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MemeDisplay : MonoBehaviour
 {
-    public Player currentMemeOwner;
+    Image image;
+
+    private void Start()
+    {
+        image = GetComponent<Image>();
+    }
+
+    Player currentMemeOwner;
 
     public void AddDislike()
     {
@@ -15,4 +23,10 @@ public class MemeDisplay : MonoBehaviour
         Debug.Log(currentMemeOwner.name + " dislikes : " + currentMemeOwner.dislikeCount.ToString());
     }
 
+    public void RefreshMeme(Meme meme)
+    {
+        currentMemeOwner = meme.player;
+        Debug.Log("new meme. owner: " + currentMemeOwner.name);
+        image.sprite = meme.sprite;
+    }
 }
