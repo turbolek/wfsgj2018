@@ -7,7 +7,8 @@ public class MemSlot : MonoBehaviour
 {
     public bool avaiable = true;
 
-    public Image memImage;
+    public Image memeImage;
+    public AudioClip memeMusic;
     public Image[] hover = new Image[2];
     public bool choosed;
 
@@ -16,8 +17,8 @@ public class MemSlot : MonoBehaviour
 
     private void Awake()
     {
-        _material = new Material(memImage.material);
-        memImage.material = _material;
+        _material = new Material(memeImage.material);
+        memeImage.material = _material;
         _grayPropertyId = Shader.PropertyToID("_GrayAmount");
         for (int i = 0; i < hover.Length; i++)
         {
@@ -27,7 +28,7 @@ public class MemSlot : MonoBehaviour
 
     public void SetMem(Sprite mem)
     {
-        memImage.sprite = mem;
+        memeImage.sprite = mem;
     }
 
     public void SelectMem(Player.PlayerID player)
@@ -68,7 +69,7 @@ public class MemSlot : MonoBehaviour
 
     public void SetGrayed(bool state)
     {
-        if (!memImage || !_material) return;
+        if (!memeImage || !_material) return;
         _material.SetFloat(_grayPropertyId, state == true ? 1f : 0f);
     }
 }

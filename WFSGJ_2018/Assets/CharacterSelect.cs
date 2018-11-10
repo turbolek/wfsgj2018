@@ -45,7 +45,7 @@ public class CharacterSelect : MonoBehaviour
         _slots[playerChoose[(int)player]].ChooseMem(player);
         mems.selectedSlot.Add(_slots[playerChoose[(int)player]]);
         mems.slot[mems.selectedSlot.Count - 1].enabled = true;
-        mems.slot[mems.selectedSlot.Count - 1].sprite = _slots[playerChoose[(int)player]].memImage.sprite;
+        mems.slot[mems.selectedSlot.Count - 1].sprite = _slots[playerChoose[(int)player]].memeImage.sprite;
     }
 
     public void CancelChooseMem(Player.PlayerID player)

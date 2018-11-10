@@ -6,11 +6,13 @@ using UnityEngine.UI;
 public class MemeDisplay : MonoBehaviour
 {
     Image image;
+    AudioSource audioSource;
     public PlayerUI[] playerUIs;
 
     private void Start()
     {
         image = GetComponent<Image>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     Player currentMemeOwner;
@@ -33,7 +35,8 @@ public class MemeDisplay : MonoBehaviour
         currentMemeOwner = meme.player;
         Debug.Log("new meme. owner: " + currentMemeOwner.name);
         image.sprite = meme.sprite;
-
+        audioSource.clip = meme.audioClip;
+        audioSource.Play();
  
     }
 }

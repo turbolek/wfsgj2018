@@ -16,12 +16,14 @@ public class GameplayManager : MonoBehaviour
     {
         for (int i = 0; i < player1.selectedSlot.Count; i++)
         {
-            memes[i].sprite = player1.selectedSlot[i].memImage.sprite;
+            memes[i].sprite = player1.selectedSlot[i].memeImage.sprite;
+            memes[i].audioClip = player1.selectedSlot[i].memeMusic;
         }
 
         for (int i = 0; i < player2.selectedSlot.Count; i++)
         {
-            memes[i].sprite = player2.selectedSlot[i].memImage.sprite;
+            memes[i].sprite = player2.selectedSlot[i].memeImage.sprite;
+            memes[i].audioClip = player2.selectedSlot[i].memeMusic;
         }
     }
 
