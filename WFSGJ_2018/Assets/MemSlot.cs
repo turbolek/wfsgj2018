@@ -11,6 +11,8 @@ public class MemSlot : MonoBehaviour
     public AudioClip memeMusic;
     public Image[] hover = new Image[2];
     public bool choosed;
+    [HideInInspector]
+    public Animator animator;
 
     Material _material;
     int _grayPropertyId;
@@ -24,6 +26,7 @@ public class MemSlot : MonoBehaviour
         {
             hover[i].enabled = false;
         }
+        animator = GetComponent<Animator>();
     }
 
     public void SetMem(Sprite mem)
@@ -35,12 +38,14 @@ public class MemSlot : MonoBehaviour
     {
         hover[(int)player].enabled = true;
         CheckHoverFill();
+        animator.SetTrigger("highlight");
     }
 
     public void DiselectMem(Player.PlayerID player)
     {
         hover[(int)player].enabled = false;
         CheckHoverFill();
+        animator.SetTrigger("release");
     }
 
     void CheckHoverFill()
@@ -57,12 +62,14 @@ public class MemSlot : MonoBehaviour
 
     public void ChooseMem(Player.PlayerID player)
     {
+        animator.SetTrigger("select");
         choosed = true;
         SetGrayed(true);
     }
 
     public void CancelChoose()
     {
+        animator.SetTrigger("cancel");
         choosed = false;
         SetGrayed(false);
     }
