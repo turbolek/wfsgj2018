@@ -10,9 +10,13 @@ public class MemeDisplay : MonoBehaviour
     public PlayerUI[] playerUIs;
     public GameplayManager gameplayManager;
 
+    public Image playingNextImage;
+    public Image playingNextCounterImage;
+
     public Slider slider;
     public Text timeLabel;
     float timer = 0f;
+    public Sprite notAvailableSprite;
 
     private void Start()
     {
@@ -39,7 +43,7 @@ public class MemeDisplay : MonoBehaviour
             gameplayManager.FinishGame();
     }
 
-    public void RefreshMeme(Meme meme)
+    public void RefreshMeme(Meme meme, Meme nextMeme)
     {
         currentMemeOwner = meme.player;
         Debug.Log("new meme. owner: " + currentMemeOwner.name);
@@ -47,6 +51,12 @@ public class MemeDisplay : MonoBehaviour
         audioSource.clip = meme.audioClip;
         audioSource.Play();
         timer = 0f;
+
+        if (nextMeme != null)
+            playingNextImage.sprite = nextMeme.sprite;
+        else
+            playingNextImage.sprite = notAvailableSprite;
+
     }
 
     private void Update()
@@ -57,5 +67,7 @@ public class MemeDisplay : MonoBehaviour
         timeLabel.text = "00:" + ((int)timer).ToString(("D2"));
         slider.value = timer / gameplayManager.memeLifetime;
         timer += Time.deltaTime;
+
+        playingNextCounterImage.fillAmount = timer / gameplayManager.memeLifetime;
     }
 }
