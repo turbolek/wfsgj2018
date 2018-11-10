@@ -64,6 +64,6 @@ public class GameplayManager : MonoBehaviour
 
     void FinishGame()
     {
-        GameManager.Instance.ShowScreen(ScreenType.endScreen);
+        GameManager.Instance.ShowScreen(ScreenType.endScreen, false);
     }
 }

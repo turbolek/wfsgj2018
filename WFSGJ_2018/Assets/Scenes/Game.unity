@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311918, g: 0.3807398, b: 0.35872716, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1318,8 +1318,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc98683efc8421e47b8dd156b9f4788a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _screenType: 0
-  playersUI: []
+  _screenType: 3
+  playersUI:
+  - {fileID: 2002468669}
+  - {fileID: 1957427597}
 --- !u!1 &431011976
 GameObject:
   m_ObjectHideFlags: 0
@@ -5635,6 +5637,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1914307943}
   m_CullTransparentMesh: 0
+--- !u!114 &1957427597 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114999627770255318, guid: 96e213045d87f9a498ee084cb949d1a1,
+    type: 2}
+  m_PrefabInternal: {fileID: 1115291552}
+  m_Script: {fileID: 11500000, guid: 9f3d496949b87344ca9e03029ed592bb, type: 3}
+--- !u!114 &2002468669 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114999627770255318, guid: 96e213045d87f9a498ee084cb949d1a1,
+    type: 2}
+  m_PrefabInternal: {fileID: 906927367}
+  m_Script: {fileID: 11500000, guid: 9f3d496949b87344ca9e03029ed592bb, type: 3}
 --- !u!1 &2039238574
 GameObject:
   m_ObjectHideFlags: 0

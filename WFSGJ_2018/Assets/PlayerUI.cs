@@ -25,7 +25,8 @@ public class PlayerUI : MonoBehaviour
 
     public void Refresh()
     {
-        animator.SetTrigger("healthBar_wobble");
+        if (animator != null)
+            animator.SetTrigger("healthBar_wobble");
         RefreshStatus();
     }
 
