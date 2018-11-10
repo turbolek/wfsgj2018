@@ -11,6 +11,19 @@ public class GameplayManager : MonoBehaviour
     float timer = 0f;
     public MemeDisplay memeDisplay;
 
+    public void SetMemes(SelectedSlots player1, SelectedSlots player2)
+    {
+        for (int i = 0; i < player1.selectedSlot.Count; i++)
+        {
+            memes[i].sprite = player1.selectedSlot[i].memImage.sprite;
+        }
+
+        for (int i = 0; i < player2.selectedSlot.Count; i++)
+        {
+            memes[i].sprite = player2.selectedSlot[i].memImage.sprite;
+        }
+    }
+
     private void Update()
     {
         if (memes.Count < 1)
