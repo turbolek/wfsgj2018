@@ -1,0 +1,72 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class SelectionControler : MonoBehaviour
+{
+    public Player.PlayerID player;
+    public CharacterSelect characterSelect;
+
+    string _verticalAxisName = "";
+    string _horizontalAxisName = "";
+    bool _inputBlocked;
+
+    private void Start()
+    {
+        switch (player)
+        {
+            case Player.PlayerID.Player1:
+                {
+                    _verticalAxisName = "Player1_Vertical";
+                    _horizontalAxisName = "Player1_Horizontal";
+                    break;
+                }
+            case Player.PlayerID.Player2:
+                {
+                    _verticalAxisName = "Player2_Vertical";
+                    _horizontalAxisName = "Player2_Horizontal";
+                    break;
+                }
+        }
+    }
+
+    private void Update()
+    {
+        if (!_inputBlocked)
+            Move();
+    }
+
+    void Move()
+    {
+        float horizontalAxis = Input.GetAxisRaw(_horizontalAxisName);
+        float verticalAxis = Input.GetAxisRaw(_verticalAxisName);
+
+        if (horizontalAxis > 0.2f)
+        {
+            characterSelect.MoveRight(player);
+            StartCoroutine(BlockInput());
+        }
+        else if (horizontalAxis < -0.2f)
+        {
+            characterSelect.MoveLeft(player);
+            StartCoroutine(BlockInput());
+        }
+        else if (verticalAxis > 0.2f)
+        {
+            characterSelect.MoveUp(player);
+            StartCoroutine(BlockInput());
+        }
+        else if (verticalAxis < -0.2f)
+        {
+            characterSelect.MoveDown(player);
+            StartCoroutine(BlockInput());
+        }
+    }
+
+    IEnumerator BlockInput()
+    {
+        _inputBlocked = true;
+        yield return new WaitForSeconds(0.2f);
+        _inputBlocked = false;
+    }
+}
