@@ -74,7 +74,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb45d2a963a37274fa0a8940192e8d5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  memImage: {fileID: 114705884067964304}
+  avaiable: 1
+  memeImage: {fileID: 0}
+  memeMusic: {fileID: 0}
   hover:
   - {fileID: 114597599254147642}
   - {fileID: 114596573772574892}
@@ -144,7 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: fe69168ced3130f44a053421befb0de5, type: 2}
+  m_Material: {fileID: 2100000, guid: 17efd840ce4f44145ac1c19e5186de2f, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
