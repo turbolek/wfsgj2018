@@ -21,7 +21,16 @@ public class CharacterSelect : MonoBehaviour
         {
             SelectSlot((Player.PlayerID)i, playerChoose[i]);
         }
-        //SelectSlot((Player.PlayerID)1, playerChoose[1]);
+    }
+
+    public bool PlayersAreReady()
+    {
+        for (int i = 0; i < playerChoose.Length; i++)
+        {
+            if (!playerMems[i].IsReady) return false;
+        }
+
+        return true;
     }
 
     public void ChooseMem(Player.PlayerID player)
@@ -106,13 +115,5 @@ public class SelectedSlots
     public List<MemSlot> selectedSlot;
     public Image[] slot;
 
-    public void ChooseMem()
-    {
-
-    }
-
-    public void CancelChoose()
-    {
-
-    }
+    public bool IsReady { get { return selectedSlot.Count == 0; } }
 }
