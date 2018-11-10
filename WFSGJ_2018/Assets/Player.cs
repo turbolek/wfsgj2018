@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public PlayerID playerID;
+    AudioSource audioSource;
 
     public int dislikeCount = 0;
 
@@ -58,6 +59,13 @@ public class Player : MonoBehaviour
     private void Start()
     {
         InitControls();
+        audioSource = GetComponent<AudioSource>();
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.GetComponent<Player>() != null && audioSource != null)
+            audioSource.Play();
     }
 
     void InitControls()

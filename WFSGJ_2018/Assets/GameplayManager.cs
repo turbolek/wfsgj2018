@@ -22,8 +22,9 @@ public class GameplayManager : MonoBehaviour
 
         for (int i = 0; i < player2.selectedSlot.Count; i++)
         {
-            memes[i].sprite = player2.selectedSlot[i].memeImage.sprite;
-            memes[i].audioClip = player2.selectedSlot[i].memeMusic;
+            int index = i + player1.selectedSlot.Count;
+            memes[index].sprite = player2.selectedSlot[i].memeImage.sprite;
+            memes[index].audioClip = player2.selectedSlot[i].memeMusic;
         }
     }
 
