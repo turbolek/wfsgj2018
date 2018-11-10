@@ -13,12 +13,11 @@ public class PlayerUI : MonoBehaviour
     public Text dislikesCount;
     Animator animator;
 
-    GameplayManager gameplayManager;
+    public GameplayManager gameplayManager;
 
     private void Start()
     {
         avatarImage.sprite = avaterState[0];
-        gameplayManager = FindObjectOfType<GameplayManager>();
         greenBar.fillAmount = 1;
         animator = GetComponent<Animator>();
     }

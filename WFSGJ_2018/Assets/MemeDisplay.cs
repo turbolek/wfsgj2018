@@ -8,6 +8,7 @@ public class MemeDisplay : MonoBehaviour
     Image image;
     AudioSource audioSource;
     public PlayerUI[] playerUIs;
+    public GameplayManager gameplayManager;
 
     private void Start()
     {
@@ -29,6 +30,9 @@ public class MemeDisplay : MonoBehaviour
             if (playerUI.player == currentMemeOwner)
                 playerUI.Refresh();
         }
+
+        if (currentMemeOwner.dislikeCount >= gameplayManager.playersHealth)
+            gameplayManager.FinishGame();
     }
 
     public void RefreshMeme(Meme meme)

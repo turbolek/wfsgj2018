@@ -601,7 +601,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 999
+  m_Text: 0
 --- !u!114 &114107699009514654
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -620,6 +620,7 @@ MonoBehaviour:
   avatarImage: {fileID: 114308887622376580}
   greenBar: {fileID: 114323507717129576}
   player: {fileID: 0}
+  dislikesCount: {fileID: 114548860123206064}
 --- !u!114 &114114620830795996
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -945,6 +946,7 @@ MonoBehaviour:
   playerUIs:
   - {fileID: 114702340405079800}
   - {fileID: 114107699009514654}
+  gameplayManager: {fileID: 0}
 --- !u!114 &114483059960424714
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1039,7 +1041,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 999
+  m_Text: 0
 --- !u!114 &114576093827596682
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1252,6 +1254,7 @@ MonoBehaviour:
   avatarImage: {fileID: 114161254718395226}
   greenBar: {fileID: 114313284929830752}
   player: {fileID: 0}
+  dislikesCount: {fileID: 114079420816893240}
 --- !u!114 &114729800341066664
 MonoBehaviour:
   m_ObjectHideFlags: 1
