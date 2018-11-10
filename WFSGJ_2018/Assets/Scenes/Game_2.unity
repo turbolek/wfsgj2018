@@ -2360,6 +2360,11 @@ Prefab:
       propertyPath: m_Color.b
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114999627770255318, guid: 96e213045d87f9a498ee084cb949d1a1,
+        type: 2}
+      propertyPath: scaleOnEnable
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96e213045d87f9a498ee084cb949d1a1, type: 2}
   m_IsPrefabAsset: 0
@@ -3247,6 +3252,11 @@ Prefab:
     - target: {fileID: 114972179415671158, guid: 96e213045d87f9a498ee084cb949d1a1,
         type: 2}
       propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999627770255318, guid: 96e213045d87f9a498ee084cb949d1a1,
+        type: 2}
+      propertyPath: scaleOnEnable
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -4506,6 +4516,21 @@ Prefab:
         type: 2}
       propertyPath: m_textAlignment
       value: 260
+      objectReference: {fileID: 0}
+    - target: {fileID: 224257584063896616, guid: f2ea5a7ed1b3b8a4cb18719eaf9fd500,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 224095910440538800, guid: f2ea5a7ed1b3b8a4cb18719eaf9fd500,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224135620522477464, guid: f2ea5a7ed1b3b8a4cb18719eaf9fd500,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2ea5a7ed1b3b8a4cb18719eaf9fd500, type: 2}

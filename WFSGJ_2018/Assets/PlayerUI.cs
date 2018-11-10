@@ -8,7 +8,7 @@ public class PlayerUI : MonoBehaviour
     public Sprite[] avaterState;
     public Image avatarImage;
 
-    public GameObject redBar;
+    public Image greenBar;
     public Player player;
     Animator animator;
 
@@ -16,19 +16,19 @@ public class PlayerUI : MonoBehaviour
 
     private void Start()
     {
+        avatarImage.sprite = avaterState[0];
         gameplayManager = FindObjectOfType<GameplayManager>();
-        redBar.transform.localScale = new Vector3(0f, 1f, 1f);
+        greenBar.fillAmount = 1;
         animator = GetComponent<Animator>();
     }
 
     public void Refresh()
     {
-
-        redBar.transform.localScale = new Vector3(Mathf.Clamp((float) player.dislikeCount / gameplayManager.playersHealth, 0f, 1f), 1f, 1f);
         animator.SetTrigger("healthBar_wobble");
 
-        var percent = (float)player.dislikeCount / gameplayManager.playersHealth;
-        redBar.transform.localScale = new Vector3(Mathf.Clamp(percent, 0f, 1f), 1f, 1f);
+        var percent = 1 - (float)player.dislikeCount / gameplayManager.playersHealth;
+        Debug.Log("Percent:" + percent);
+        greenBar.fillAmount = Mathf.Clamp01(percent);
 
         if (percent < 0.6f) avatarImage.sprite = avaterState[1];
         else if (percent < 0.25f) avatarImage.sprite = avaterState[2];
