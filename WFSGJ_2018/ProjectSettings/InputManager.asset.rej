@@ -1,0 +1,9 @@
+diff a/WFSGJ_2018/ProjectSettings/InputManager.asset b/WFSGJ_2018/ProjectSettings/InputManager.asset	(rejected hunks)
+@@ -391,6 +391,7 @@
+     negativeButton: 
+     positiveButton: enter
+     altNegativeButton: 
++    altPositiveButton: joystick 1 button 10
+     gravity: 1000
+     dead: 0.001
+     sensitivity: 1000
