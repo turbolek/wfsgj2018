@@ -14,59 +14,33 @@ public class Movement : MonoBehaviour
     float velocityX;
     float velocityY;
 
-    string verticalAxisName = "";
-    string horizontalAxisName = "";
-    string clickName = "";
-
     Rigidbody rb;
+    Player player;
 
     // Use this for initialization
     void Start()
     {
-        Player player = GetComponent<Player>();
+        player = GetComponent<Player>();
         rb = GetComponent<Rigidbody>();
         if (player == null)
             return;
 
-        switch (player.playerID)
-        {
-            case Player.PlayerID.Player1:
-                {
-                    verticalAxisName = "Player1_Vertical";
-                    horizontalAxisName = "Player1_Horizontal";
-                    clickName = "Player1_Click";
-                    break;
-                }
-            case Player.PlayerID.Player2:
-                {
-                    verticalAxisName = "Player2_Vertical";
-                    horizontalAxisName = "Player2_Horizontal";
-                    clickName = "Player2_Click";
-                    break;
-                }
-        }
+
     }
 
     // Update is called once per frame
     void Update()
     {
         ManageMovement();
-        CheckClick();
+
         ManageMass();
     }
 
-    void CheckClick()
-    {
-        if (Input.GetButtonDown(clickName))
-        {
-            print("click");
-        }
-    }
 
     void ManageMovement()
     {
-        float horizontalAxis = Input.GetAxisRaw(horizontalAxisName);
-        float verticalAxis = Input.GetAxisRaw(verticalAxisName);
+        float horizontalAxis = Input.GetAxisRaw(player.HorizontalAxisName);
+        float verticalAxis = Input.GetAxisRaw(player.VerticalAxisName);
 
         bool horizontalAxisIdle = Mathf.Abs(horizontalAxis) < controllerDeadZone;
         bool verticalAxisIdle = Mathf.Abs(verticalAxis) < controllerDeadZone;
