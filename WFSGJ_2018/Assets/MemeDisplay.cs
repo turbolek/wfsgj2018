@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class MemeDisplay : MonoBehaviour
 {
     Image image;
+    public PlayerUI[] playerUIs;
 
     private void Start()
     {
@@ -21,6 +22,10 @@ public class MemeDisplay : MonoBehaviour
 
         currentMemeOwner.dislikeCount++;
         Debug.Log(currentMemeOwner.name + " dislikes : " + currentMemeOwner.dislikeCount.ToString());
+        foreach (PlayerUI playerUI in playerUIs)
+        {
+            playerUI.Refresh();
+        }
     }
 
     public void RefreshMeme(Meme meme)
@@ -28,5 +33,7 @@ public class MemeDisplay : MonoBehaviour
         currentMemeOwner = meme.player;
         Debug.Log("new meme. owner: " + currentMemeOwner.name);
         image.sprite = meme.sprite;
+
+ 
     }
 }

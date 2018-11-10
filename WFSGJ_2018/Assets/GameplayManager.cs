@@ -10,6 +10,7 @@ public class GameplayManager : MonoBehaviour
     public float memeLifetime;
     float timer = 0f;
     public MemeDisplay memeDisplay;
+    public int playersHealth;
 
     public void SetMemes(SelectedSlots player1, SelectedSlots player2)
     {
