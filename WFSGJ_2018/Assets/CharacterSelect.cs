@@ -25,6 +25,15 @@ public class CharacterSelect : MonoBehaviour
         }
     }
 
+    public void ResetSelection()
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            if (playerMems[0].selectedSlot.Count > 0) CancelChooseMem(Player.PlayerID.Player1);
+            if (playerMems[1].selectedSlot.Count > 0) CancelChooseMem(Player.PlayerID.Player2);
+        }
+    }
+
     public bool PlayersAreReady()
     {
         for (int i = 0; i < playerChoose.Length; i++)
