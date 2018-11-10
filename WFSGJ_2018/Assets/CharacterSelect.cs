@@ -32,6 +32,7 @@ public class CharacterSelect : MonoBehaviour
 
         _slots[playerChoose[(int)player]].ChooseMem(player);
         mems.selectedSlot.Add(_slots[playerChoose[(int)player]]);
+        mems.slot[mems.selectedSlot.Count - 1].enabled = true;
         mems.slot[mems.selectedSlot.Count - 1].sprite = _slots[playerChoose[(int)player]].memImage.sprite;
     }
 
@@ -44,19 +45,23 @@ public class CharacterSelect : MonoBehaviour
         mems.selectedSlot[mems.selectedSlot.Count - 1].CancelChoose();
         mems.selectedSlot.RemoveAt(mems.selectedSlot.Count - 1);
         mems.slot[mems.selectedSlot.Count].sprite = null;
+        mems.slot[mems.selectedSlot.Count].enabled = false;
     }
 
     public void MoveRight(Player.PlayerID player)
     {
         var index = playerChoose[(int)player] + 1;
 
-        while (index < _slots.Length && (_slots[index].choosed || _slots[index].hover.enabled))
-        {
-            index++;
+        //while (index < _slots.Length && (_slots[index].choosed || _slots[index].hover.enabled))
+        //{
+        //    index++;
 
-            if (index >= _slots.Length)
-                return;
-        }
+        //    if (index >= _slots.Length)
+        //        return;
+        //}
+
+        if (index >= _slots.Length)
+            return;
 
         SelectSlot(player, index);
     }
@@ -65,13 +70,16 @@ public class CharacterSelect : MonoBehaviour
     {
         var index = playerChoose[(int)player] - 1;
 
-        while (index >= 0 && (_slots[index].choosed || _slots[index].hover.enabled))
-        {
-            index--;
+        //while (index >= 0 && (_slots[index].choosed || _slots[index].hover.enabled))
+        //{
+        //    index--;
 
-            if (index < 0)
-                return;
-        }
+        //    if (index < 0)
+        //        return;
+        //}
+
+        if (index < 0)
+            return;
 
         SelectSlot(player, index);
     }
@@ -123,4 +131,14 @@ public class SelectedSlots
 {
     public List<MemSlot> selectedSlot;
     public Image[] slot;
+
+    public void ChooseMem()
+    {
+
+    }
+
+    public void CancelChoose()
+    {
+
+    }
 }
