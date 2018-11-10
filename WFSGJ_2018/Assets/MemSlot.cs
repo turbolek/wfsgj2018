@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class MemSlot : MonoBehaviour
 {
+    public bool avaiable = true;
+
     public Image memImage;
     public Image[] hover = new Image[2];
     public bool choosed;

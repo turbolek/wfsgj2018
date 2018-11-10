@@ -39,7 +39,8 @@ public class CharacterSelect : MonoBehaviour
     {
         var mems = playerMems[(int)player];
 
-        if (mems.selectedSlot.Count >= mems.slot.Length || _slots[playerChoose[(int)player]].choosed) return;
+        if (mems.selectedSlot.Count >= mems.slot.Length || _slots[playerChoose[(int)player]].choosed
+            || !_slots[playerChoose[(int)player]].avaiable) return;
 
         _slots[playerChoose[(int)player]].ChooseMem(player);
         mems.selectedSlot.Add(_slots[playerChoose[(int)player]]);
