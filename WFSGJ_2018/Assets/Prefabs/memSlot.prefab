@@ -56,6 +56,7 @@ GameObject:
   - component: {fileID: 222047285060834958}
   - component: {fileID: 114705884067964304}
   - component: {fileID: 114012561952975164}
+  - component: {fileID: 95446123255243036}
   m_Layer: 5
   m_Name: memSlot
   m_TagString: Untagged
@@ -63,6 +64,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!95 &95446123255243036
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1737861209422046}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1a45fcff57dea4c4396d9e41fa7a7bf7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114012561952975164
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -76,7 +95,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   avaiable: 1
   memeImage: {fileID: 114705884067964304}
-  memeMusic: {fileID: 0}
+  memeMusic: {fileID: 8300000, guid: 3b967a72fa5e46840977865c6f9fa81c, type: 3}
   hover:
   - {fileID: 114597599254147642}
   - {fileID: 114596573772574892}
@@ -154,7 +173,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 650b2d647b372d548bdaab360eb96d6e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bc33477209df81e48ad4c6d257743446, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
