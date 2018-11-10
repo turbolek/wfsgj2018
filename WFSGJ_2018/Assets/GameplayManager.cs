@@ -16,20 +16,20 @@ public class GameplayManager: MonoBehaviour {
         if (memes.Count < 1)
             return;
         if (currentMeme = null)
-            currentMeme = memes[0];
+            SetNextMeme();
 
         if (timer > memeLifetime)
         {
-            currentMeme = GetNextMeme();
-            memeDisplay.RefreshMeme(currentMeme);
-            timer = 0f;
+            SetNextMeme();
         }
         timer += Time.deltaTime;
     }
 
-    Meme GetNextMeme()
+    void SetNextMeme()
     {
         Meme meme = memes[Random.Range(0, memes.Count)];
-        return meme;
+        timer = 0f;
+        currentMeme = meme;
+        memeDisplay.RefreshMeme(currentMeme);
     }
 }
