@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class MemSlot : MonoBehaviour
 {
-    public Image hover;
+    public Image memImage, hover;
     public Color[] hoverColor;
 
     public bool choosed;
@@ -13,6 +13,11 @@ public class MemSlot : MonoBehaviour
     private void Awake()
     {
         hover.enabled = false;
+    }
+
+    public void SetMem(Sprite mem)
+    {
+        memImage.sprite = mem;
     }
 
     public void SelectMem(Player.PlayerID player)

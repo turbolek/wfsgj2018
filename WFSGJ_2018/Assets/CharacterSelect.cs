@@ -1,26 +1,43 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CharacterSelect : MonoBehaviour
 {
     MemSlot[] _slots;
 
-    int[] playerChoose = new int[] { 0, 3 };
+    public SelectedSlots[] playerMems;
 
+    int[] playerChoose = new int[] { 0, 3 };
     string verticalAxisName = "";
     string horizontalAxisName = "";
 
     public void Start()
     {
         _slots = GetComponentsInChildren<MemSlot>();
-        SelectSlot((Player.PlayerID)0, playerChoose[0]);
-        SelectSlot((Player.PlayerID)1, playerChoose[1]);
+
+        for (int i = 0; i < playerChoose.Length; i++)
+        {
+            SelectSlot((Player.PlayerID)i, playerChoose[i]);
+        }
+        //SelectSlot((Player.PlayerID)1, playerChoose[1]);
     }
 
     public void ChooseMem(Player.PlayerID player)
     {
+        var mems = playerMems[(int)player];
+
+        if (mems.selectedSlot.Count >= mems.slot.Length) return;
+
         _slots[playerChoose[(int)player]].ChooseMem(player);
+
+        //Debug.Log(player);
+        //Debug.Log(mems.selectedSlot.Count);
+        //Debug.Log(player);
+
+        mems.selectedSlot.Add(_slots[playerChoose[(int)player]]);
+        mems.slot[mems.selectedSlot.Count - 1].sprite = _slots[playerChoose[(int)player]].memImage.sprite;
     }
 
     public void MoveRight(Player.PlayerID player)
@@ -97,4 +114,11 @@ public class CharacterSelect : MonoBehaviour
         playerChoose[(int)player] = index;
         _slots[index].SelectMem(player);
     }
+}
+
+[System.Serializable]
+public class SelectedSlots
+{
+    public List<MemSlot> selectedSlot;
+    public Image[] slot;
 }

@@ -9,6 +9,7 @@ public class SelectionControler : MonoBehaviour
 
     string _verticalAxisName = "";
     string _horizontalAxisName = "";
+    string _confirmString = "";
     bool _inputBlocked;
 
     private void Start()
@@ -19,12 +20,14 @@ public class SelectionControler : MonoBehaviour
                 {
                     _verticalAxisName = "Player1_Vertical";
                     _horizontalAxisName = "Player1_Horizontal";
+                    _confirmString = "Player1_Confirm";
                     break;
                 }
             case Player.PlayerID.Player2:
                 {
                     _verticalAxisName = "Player2_Vertical";
                     _horizontalAxisName = "Player2_Horizontal";
+                    _confirmString = "Player2_Confirm";
                     break;
                 }
         }
@@ -33,7 +36,10 @@ public class SelectionControler : MonoBehaviour
     private void Update()
     {
         if (!_inputBlocked)
+        {
             Move();
+            Confirm();
+        }
     }
 
     void Move()
@@ -60,6 +66,15 @@ public class SelectionControler : MonoBehaviour
         {
             characterSelect.MoveDown(player);
             StartCoroutine(BlockInput());
+        }
+    }
+
+    void Confirm()
+    {
+        if (Input.GetButtonDown(_confirmString))
+        {
+            characterSelect.ChooseMem(player);
+            Debug.Log("Confirm " + player);
         }
     }
 
