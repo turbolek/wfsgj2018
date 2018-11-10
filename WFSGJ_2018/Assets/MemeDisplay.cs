@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MemeDisplay : MonoBehaviour
 {
-    public Player currentMemeOwner;
+    Player currentMemeOwner;
 
     public void AddDislike()
     {
@@ -15,4 +15,9 @@ public class MemeDisplay : MonoBehaviour
         Debug.Log(currentMemeOwner.name + " dislikes : " + currentMemeOwner.dislikeCount.ToString());
     }
 
+    public void RefreshMeme(Meme meme)
+    {
+        currentMemeOwner = meme.player;
+        Debug.Log("new meme. owner: " + currentMemeOwner.name);
+    }
 }
