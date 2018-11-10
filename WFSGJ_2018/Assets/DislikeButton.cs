@@ -6,6 +6,12 @@ public class DislikeButton : MonoBehaviour
 {
 
     public MemeDisplay memeDisplay;
+    AudioSource audioSource;
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     public void Click()
     {
@@ -16,6 +22,7 @@ public class DislikeButton : MonoBehaviour
             return;
         }
 
+        audioSource.Play();
         memeDisplay.AddDislike();
     }
 }
