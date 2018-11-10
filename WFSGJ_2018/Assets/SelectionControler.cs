@@ -41,9 +41,10 @@ public class SelectionControler : MonoBehaviour
         if (!_inputBlocked)
         {
             Move();
-            OnConfirm();
-            OnCancel();
         }
+
+        OnConfirm();
+        OnCancel();
     }
 
     void Move()
