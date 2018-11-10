@@ -25,14 +25,15 @@ public class PlayerUI : MonoBehaviour
     public void Refresh()
     {
         animator.SetTrigger("healthBar_wobble");
+        RefreshStatus();
+    }
 
+    public void RefreshStatus()
+    {
         var percent = 1 - (float)player.dislikeCount / gameplayManager.playersHealth;
-        Debug.Log("Percent:" + percent);
         greenBar.fillAmount = Mathf.Clamp01(percent);
 
         if (percent < 0.25f) avatarImage.sprite = avaterState[2];
         else if (percent < 0.6f) avatarImage.sprite = avaterState[1];
-
     }
-
 }
