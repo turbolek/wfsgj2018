@@ -6,6 +6,8 @@ public class Player : MonoBehaviour
 {
     public PlayerID playerID;
 
+    public int dislikeCount = 0;
+
     #region Controls
     string verticalAxisName = "";
     public string VerticalAxisName {  get { return verticalAxisName; } }
