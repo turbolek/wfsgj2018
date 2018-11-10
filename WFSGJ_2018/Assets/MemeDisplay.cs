@@ -1,10 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MemeDisplay : MonoBehaviour
 {
-    public Player currentMemeOwner;
+    Image image;
+    AudioSource audioSource;
+    public PlayerUI[] playerUIs;
+
+    private void Start()
+    {
+        image = GetComponent<Image>();
+        audioSource = GetComponent<AudioSource>();
+    }
+
+    Player currentMemeOwner;
 
     public void AddDislike()
     {
@@ -13,6 +24,20 @@ public class MemeDisplay : MonoBehaviour
 
         currentMemeOwner.dislikeCount++;
         Debug.Log(currentMemeOwner.name + " dislikes : " + currentMemeOwner.dislikeCount.ToString());
+        foreach (PlayerUI playerUI in playerUIs)
+        {
+            if (playerUI.player == currentMemeOwner)
+                playerUI.Refresh();
+        }
     }
 
+    public void RefreshMeme(Meme meme)
+    {
+        currentMemeOwner = meme.player;
+        Debug.Log("new meme. owner: " + currentMemeOwner.name);
+        image.sprite = meme.sprite;
+        audioSource.clip = meme.audioClip;
+        audioSource.Play();
+
+    }
 }

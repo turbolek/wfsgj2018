@@ -38,6 +38,8 @@ public class SelectionControler : MonoBehaviour
 
     private void Update()
     {
+        if (Fader.Instance.IsActive) return;
+
         if (!_inputBlocked)
         {
             Move();
@@ -78,7 +80,14 @@ public class SelectionControler : MonoBehaviour
     {
         if (Input.GetButtonDown(_confirmString))
         {
-            characterSelect.ChooseMem(player);
+            if (!characterSelect.PlayersAreReady())
+            {
+                characterSelect.ChooseMem(player);
+            }
+            else if (player == Player.PlayerID.Player1)
+            {
+                characterSelect.StartGame();
+            }
         }
     }
 
