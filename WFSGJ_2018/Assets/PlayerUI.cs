@@ -30,8 +30,8 @@ public class PlayerUI : MonoBehaviour
         Debug.Log("Percent:" + percent);
         greenBar.fillAmount = Mathf.Clamp01(percent);
 
-        if (percent < 0.6f) avatarImage.sprite = avaterState[1];
-        else if (percent < 0.25f) avatarImage.sprite = avaterState[2];
+        if (percent < 0.25f) avatarImage.sprite = avaterState[2];
+        else if (percent < 0.6f) avatarImage.sprite = avaterState[1];
 
     }
 
