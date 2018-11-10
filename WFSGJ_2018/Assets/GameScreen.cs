@@ -19,14 +19,14 @@ public class GameScreen : MonoBehaviour
 
     public ScreenType ScreenType { get { return _screenType; } }
 
-    public void Show()
+    public virtual void Show()
     {
         if (_activeScreen) _activeScreen.Hide();
         gameObject.SetActive(true);
         _activeScreen = this;
     }
 
-    public void Hide()
+    public virtual void Hide()
     {
         gameObject.SetActive(false);
     }

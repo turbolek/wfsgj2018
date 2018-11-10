@@ -2,15 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EndScreen : MonoBehaviour {
+public class EndScreen : GameScreen
+{
+    public PlayerUI[] playersUI;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public override void Show()
+    {
+        base.Show();
+
+        for (int i = 0; i < playersUI.Length; i++)
+        {
+            playersUI[i].Refresh();
+        }
+    }
 }

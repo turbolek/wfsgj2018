@@ -18,14 +18,14 @@ public class GameplayManager : MonoBehaviour
     {
         for (int i = 0; i < player1.selectedSlot.Count; i++)
         {
-            memes[2*i].sprite = player1.selectedSlot[i].memeImage.sprite;
-            memes[2*i].audioClip = player1.selectedSlot[i].memeMusic;
+            memes[2 * i].sprite = player1.selectedSlot[i].memeImage.sprite;
+            memes[2 * i].audioClip = player1.selectedSlot[i].memeMusic;
         }
 
         for (int i = 0; i < player2.selectedSlot.Count; i++)
         {
-            memes[2*i + 1].sprite = player2.selectedSlot[i].memeImage.sprite;
-            memes[2*i + 1].audioClip = player2.selectedSlot[i].memeMusic;
+            memes[2 * i + 1].sprite = player2.selectedSlot[i].memeImage.sprite;
+            memes[2 * i + 1].audioClip = player2.selectedSlot[i].memeMusic;
         }
     }
 
@@ -64,6 +64,6 @@ public class GameplayManager : MonoBehaviour
 
     void FinishGame()
     {
-
+        GameManager.Instance.ShowScreen(ScreenType.endScreen);
     }
 }
