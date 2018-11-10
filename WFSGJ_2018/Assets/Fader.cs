@@ -35,16 +35,16 @@ public class Fader : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.X))
         {
-            StartBuffering();
+            StartBuffering(2);
         }
     }
 
-    public void StartBuffering()
+    public void StartBuffering(float bufferingTime = 2)
     {
-        StartCoroutine(Buffering());
+        StartCoroutine(Buffering(bufferingTime));
     }
 
-    IEnumerator Buffering()
+    IEnumerator Buffering(float bufferingTime)
     {
         _active = true;
 
@@ -62,7 +62,7 @@ public class Fader : MonoBehaviour
 
 
         if (dots) dots.gameObject.SetActive(true);
-        for (int i = 0; i < 20; i++)
+        for (int i = 0; i < (int)(bufferingTime / 0.1f); i++)
         {
             yield return new WaitForSeconds(0.1f);
             var eulear = dots.eulerAngles;
