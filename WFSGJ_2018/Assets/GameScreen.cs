@@ -10,9 +10,9 @@ public enum ScreenType
     endScreen
 }
 
-public class Screen : MonoBehaviour
+public class GameScreen : MonoBehaviour
 {
-    static Screen _activeScreen;
+    static GameScreen _activeScreen;
 
     [SerializeField]
     ScreenType _screenType;

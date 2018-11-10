@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
-    public Screen[] screens;
+    public GameScreen[] screens;
 
     int _screenIndex;
 
