@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        foreach (GameScreen screen in screens)
+            screen.Hide();
         ShowScreen(ScreenType.characterSelect);
     }
 
