@@ -8,6 +8,11 @@ public class MemeDisplay : MonoBehaviour
     Image image;
     AudioSource audioSource;
     public PlayerUI[] playerUIs;
+    public GameplayManager gameplayManager;
+
+    public Slider slider;
+    public Text timeLabel;
+    float timer = 0f;
 
     private void Start()
     {
@@ -29,6 +34,9 @@ public class MemeDisplay : MonoBehaviour
             if (playerUI.player == currentMemeOwner)
                 playerUI.Refresh();
         }
+
+        if (currentMemeOwner.dislikeCount >= gameplayManager.playersHealth)
+            gameplayManager.FinishGame();
     }
 
     public void RefreshMeme(Meme meme)
@@ -38,6 +46,16 @@ public class MemeDisplay : MonoBehaviour
         image.sprite = meme.sprite;
         audioSource.clip = meme.audioClip;
         audioSource.Play();
+        timer = 0f;
+    }
 
+    private void Update()
+    {
+        if (currentMemeOwner == null)
+            return;
+
+        timeLabel.text = "00:" + ((int)timer).ToString(("D2"));
+        slider.value = timer / gameplayManager.memeLifetime;
+        timer += Time.deltaTime;
     }
 }
