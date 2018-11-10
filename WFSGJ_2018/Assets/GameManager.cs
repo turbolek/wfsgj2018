@@ -15,6 +15,11 @@ public class GameManager : MonoBehaviour
         Instance = this;
     }
 
+    private void Start()
+    {
+        ShowScreen(ScreenType.characterSelect);
+    }
+
     public void ShowScreen(ScreenType screen)
     {
         for (int i = 0; i < screens.Length; i++)

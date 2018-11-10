@@ -28,6 +28,6 @@ public class GameScreen : MonoBehaviour
 
     public void Hide()
     {
-        gameObject.SetActive(true);
+        gameObject.SetActive(false);
     }
 }
