@@ -1022,6 +1022,10 @@ Prefab:
       propertyPath: m_Name
       value: Player1
       objectReference: {fileID: 0}
+    - target: {fileID: 4282425031973692, guid: 5e9e334953f29a94d8fb966eee9d72a5, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -0.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e9e334953f29a94d8fb966eee9d72a5, type: 2}
   m_IsPrefabAsset: 0
@@ -1156,6 +1160,10 @@ Prefab:
         type: 2}
       propertyPath: playerID
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4282425031973692, guid: 5e9e334953f29a94d8fb966eee9d72a5, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e9e334953f29a94d8fb966eee9d72a5, type: 2}
@@ -2029,6 +2037,7 @@ GameObject:
   - component: {fileID: 1071491137}
   - component: {fileID: 1071491136}
   - component: {fileID: 1071491139}
+  - component: {fileID: 1071491140}
   m_Layer: 0
   m_Name: DislikeButton
   m_TagString: Untagged
@@ -2169,6 +2178,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &1071491140
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1071491135}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 25477cc258bf28a46b65dfe487b1b9db, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1199843599
 GameObject:
   m_ObjectHideFlags: 0

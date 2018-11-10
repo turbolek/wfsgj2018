@@ -7,10 +7,12 @@ public class DislikeButton : MonoBehaviour
 
     public MemeDisplay memeDisplay;
     AudioSource audioSource;
+    Animator animator;
 
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        animator = GetComponent<Animator>();
     }
 
     public void Click()
@@ -24,5 +26,6 @@ public class DislikeButton : MonoBehaviour
 
         audioSource.Play();
         memeDisplay.AddDislike();
+        animator.SetTrigger("click");
     }
 }
