@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
+  m_IndirectSpecularColor: {r: 0.37312052, g: 0.3807414, b: 0.35872862, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -372,13 +372,17 @@ Prefab:
         type: 2}
       propertyPath: memeMusic
       value: 
-      objectReference: {fileID: 8300000, guid: eff0e862bcbc2bd4c8e7dccf70078e39, type: 3}
+      objectReference: {fileID: 8300000, guid: 3b967a72fa5e46840977865c6f9fa81c, type: 3}
     - target: {fileID: 114705884067964304, guid: 079190f1e5f492a4d8a561ab54dde05f,
         type: 2}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: bc33477209df81e48ad4c6d257743446,
         type: 3}
+    - target: {fileID: 1737861209422046, guid: 079190f1e5f492a4d8a561ab54dde05f, type: 2}
+      propertyPath: m_Name
+      value: cantinaSlot
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 079190f1e5f492a4d8a561ab54dde05f, type: 2}
   m_IsPrefabAsset: 0
@@ -625,7 +629,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1737861209422046, guid: 079190f1e5f492a4d8a561ab54dde05f, type: 2}
       propertyPath: m_Name
-      value: memSlot (1)
+      value: gandalfSlot
       objectReference: {fileID: 0}
     - target: {fileID: 114705884067964304, guid: 079190f1e5f492a4d8a561ab54dde05f,
         type: 2}
@@ -637,7 +641,7 @@ Prefab:
         type: 2}
       propertyPath: memeMusic
       value: 
-      objectReference: {fileID: 8300000, guid: ef3ce232ddd7f6049adfd011e0495743, type: 3}
+      objectReference: {fileID: 8300000, guid: 0caf556829de62b49a9d83090dec40d4, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 079190f1e5f492a4d8a561ab54dde05f, type: 2}
   m_IsPrefabAsset: 0
@@ -2014,7 +2018,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1737861209422046, guid: 079190f1e5f492a4d8a561ab54dde05f, type: 2}
       propertyPath: m_Name
-      value: memSlot (4)
+      value: trololoSlot
       objectReference: {fileID: 0}
     - target: {fileID: 114705884067964304, guid: 079190f1e5f492a4d8a561ab54dde05f,
         type: 2}
@@ -2026,7 +2030,7 @@ Prefab:
         type: 2}
       propertyPath: memeMusic
       value: 
-      objectReference: {fileID: 8300000, guid: 42ea20e98227d674f9d5aece5fd51454, type: 3}
+      objectReference: {fileID: 8300000, guid: f5167c5abc4a55d40886431fa27bd73d, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 079190f1e5f492a4d8a561ab54dde05f, type: 2}
   m_IsPrefabAsset: 0
@@ -2814,7 +2818,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1737861209422046, guid: 079190f1e5f492a4d8a561ab54dde05f, type: 2}
       propertyPath: m_Name
-      value: memSlot (5)
+      value: dinTeiSlot
       objectReference: {fileID: 0}
     - target: {fileID: 114705884067964304, guid: 079190f1e5f492a4d8a561ab54dde05f,
         type: 2}
@@ -2826,7 +2830,7 @@ Prefab:
         type: 2}
       propertyPath: memeMusic
       value: 
-      objectReference: {fileID: 8300000, guid: eff0e862bcbc2bd4c8e7dccf70078e39, type: 3}
+      objectReference: {fileID: 8300000, guid: 038758faac8351945b13f650181c71c5, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 079190f1e5f492a4d8a561ab54dde05f, type: 2}
   m_IsPrefabAsset: 0
@@ -4435,7 +4439,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1737861209422046, guid: 079190f1e5f492a4d8a561ab54dde05f, type: 2}
       propertyPath: m_Name
-      value: memSlot (7)
+      value: polkaSlot
       objectReference: {fileID: 0}
     - target: {fileID: 114705884067964304, guid: 079190f1e5f492a4d8a561ab54dde05f,
         type: 2}
@@ -4447,7 +4451,7 @@ Prefab:
         type: 2}
       propertyPath: memeMusic
       value: 
-      objectReference: {fileID: 8300000, guid: eff0e862bcbc2bd4c8e7dccf70078e39, type: 3}
+      objectReference: {fileID: 8300000, guid: b6b7aca4536b56045ad43c2eb19e0384, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 079190f1e5f492a4d8a561ab54dde05f, type: 2}
   m_IsPrefabAsset: 0
@@ -4750,7 +4754,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1737861209422046, guid: 079190f1e5f492a4d8a561ab54dde05f, type: 2}
       propertyPath: m_Name
-      value: memSlot (2)
+      value: numberOneSlot
       objectReference: {fileID: 0}
     - target: {fileID: 114705884067964304, guid: 079190f1e5f492a4d8a561ab54dde05f,
         type: 2}
@@ -4762,7 +4766,7 @@ Prefab:
         type: 2}
       propertyPath: memeMusic
       value: 
-      objectReference: {fileID: 8300000, guid: 9334ebb8a0f8b2b4abebbed5a2c2f0fd, type: 3}
+      objectReference: {fileID: 8300000, guid: 51b44a251cc546b4783bb6b0cb369d44, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 079190f1e5f492a4d8a561ab54dde05f, type: 2}
   m_IsPrefabAsset: 0
@@ -5068,7 +5072,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1737861209422046, guid: 079190f1e5f492a4d8a561ab54dde05f, type: 2}
       propertyPath: m_Name
-      value: memSlot (8)
+      value: rick
       objectReference: {fileID: 0}
     - target: {fileID: 114705884067964304, guid: 079190f1e5f492a4d8a561ab54dde05f,
         type: 2}
@@ -5080,7 +5084,7 @@ Prefab:
         type: 2}
       propertyPath: memeMusic
       value: 
-      objectReference: {fileID: 8300000, guid: eff0e862bcbc2bd4c8e7dccf70078e39, type: 3}
+      objectReference: {fileID: 8300000, guid: cd0ffc4369c93e1459f5c3c7e9d3cec5, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 079190f1e5f492a4d8a561ab54dde05f, type: 2}
   m_IsPrefabAsset: 0
@@ -5372,7 +5376,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1737861209422046, guid: 079190f1e5f492a4d8a561ab54dde05f, type: 2}
       propertyPath: m_Name
-      value: memSlot (6)
+      value: pianoCatSlot
       objectReference: {fileID: 0}
     - target: {fileID: 114705884067964304, guid: 079190f1e5f492a4d8a561ab54dde05f,
         type: 2}
@@ -5987,7 +5991,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1737861209422046, guid: 079190f1e5f492a4d8a561ab54dde05f, type: 2}
       propertyPath: m_Name
-      value: memSlot (3)
+      value: nyanSlot
       objectReference: {fileID: 0}
     - target: {fileID: 114705884067964304, guid: 079190f1e5f492a4d8a561ab54dde05f,
         type: 2}
@@ -5999,7 +6003,7 @@ Prefab:
         type: 2}
       propertyPath: memeMusic
       value: 
-      objectReference: {fileID: 8300000, guid: 213115dfa0f429542ad26156f535bacc, type: 3}
+      objectReference: {fileID: 8300000, guid: 68366be36a372f54c862f8e5f0e09a5b, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 079190f1e5f492a4d8a561ab54dde05f, type: 2}
   m_IsPrefabAsset: 0
