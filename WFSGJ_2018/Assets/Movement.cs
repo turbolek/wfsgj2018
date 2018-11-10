@@ -48,8 +48,6 @@ public class Movement : MonoBehaviour
     void Update()
     {
         ManageMovement();
-
-
     }
 
     void ManageMovement()

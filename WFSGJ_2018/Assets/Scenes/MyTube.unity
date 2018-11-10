@@ -248,42 +248,6 @@ Prefab:
       propertyPath: m_Name
       value: Player1 (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 54265596058763804, guid: 5e9e334953f29a94d8fb966eee9d72a5,
-        type: 2}
-      propertyPath: m_Drag
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 54265596058763804, guid: 5e9e334953f29a94d8fb966eee9d72a5,
-        type: 2}
-      propertyPath: m_AngularDrag
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 54265596058763804, guid: 5e9e334953f29a94d8fb966eee9d72a5,
-        type: 2}
-      propertyPath: m_Mass
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114141457610715052, guid: 5e9e334953f29a94d8fb966eee9d72a5,
-        type: 2}
-      propertyPath: acceleration
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 65613713844899346, guid: 5e9e334953f29a94d8fb966eee9d72a5,
-        type: 2}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 13400000, guid: df1c4749a5d704f4bbefdcdeebed84d6,
-        type: 2}
-    - target: {fileID: 114141457610715052, guid: 5e9e334953f29a94d8fb966eee9d72a5,
-        type: 2}
-      propertyPath: maxVelocity
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 114141457610715052, guid: 5e9e334953f29a94d8fb966eee9d72a5,
-        type: 2}
-      propertyPath: velocityDrag
-      value: 10
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e9e334953f29a94d8fb966eee9d72a5, type: 2}
   m_IsPrefabAsset: 0
@@ -503,6 +467,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 65938746061089288, guid: 287fb43ff2735aa41a1b7466dbf2217e,
+        type: 2}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: df1c4749a5d704f4bbefdcdeebed84d6,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 287fb43ff2735aa41a1b7466dbf2217e, type: 2}
   m_IsPrefabAsset: 0

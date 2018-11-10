@@ -30,12 +30,6 @@ public class Bounds : MonoBehaviour {
         rightCollider.name = "RightCollider";
         leftCollider.name = "LeftCollider";
 
-        //Add the colliders
-        topCollider.gameObject.AddComponent<BoxCollider>();
-        bottomCollider.gameObject.AddComponent<BoxCollider>();
-        rightCollider.gameObject.AddComponent<BoxCollider>();
-        leftCollider.gameObject.AddComponent<BoxCollider>();
-
         //Make them the child of whatever object this script is on, preferably on the Camera so the objects move with the camera without extra scripting
         topCollider.parent = transform;
         bottomCollider.parent = transform;
