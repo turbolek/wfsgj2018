@@ -107,6 +107,33 @@ public class CharacterSelect : MonoBehaviour
         playerChoose[(int)player] = index;
         _slots[index].SelectMem(player);
     }
+
+    public void StartGame()
+    {
+        PlayerMemes.SetMemes(playerMems[0], playerMems[1]);
+        Fader.Instance.StartBuffering(2);
+        StartCoroutine(WaitForLoadScene(1.5f));
+    }
+
+    IEnumerator WaitForLoadScene(float time)
+    {
+        yield return new WaitForSeconds(time);
+        UnityEngine.SceneManagement.SceneManager.LoadScene("MyTube");
+    }
+}
+
+public static class PlayerMemes
+{
+    public static Sprite[] player1_memes = new Sprite[3], player2_memes = new Sprite[3];
+
+    public static void SetMemes(SelectedSlots player1, SelectedSlots player2)
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            player1_memes[i] = player1.selectedSlot[i].memImage.sprite;
+            player2_memes[i] = player2.selectedSlot[i].memImage.sprite;
+        }
+    }
 }
 
 [System.Serializable]
@@ -115,5 +142,5 @@ public class SelectedSlots
     public List<MemSlot> selectedSlot;
     public Image[] slot;
 
-    public bool IsReady { get { return selectedSlot.Count == 0; } }
+    public bool IsReady { get { return selectedSlot.Count == slot.Length; } }
 }

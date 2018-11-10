@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class GameplayManager: MonoBehaviour {
+public class GameplayManager : MonoBehaviour
+{
 
     public List<Meme> memes = new List<Meme>();
     public Meme currentMeme;
