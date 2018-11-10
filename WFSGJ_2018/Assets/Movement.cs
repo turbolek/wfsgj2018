@@ -16,6 +16,7 @@ public class Movement : MonoBehaviour
 
     string verticalAxisName = "";
     string horizontalAxisName = "";
+    string clickName = "";
 
     Rigidbody rb;
 
@@ -33,12 +34,14 @@ public class Movement : MonoBehaviour
                 {
                     verticalAxisName = "Player1_Vertical";
                     horizontalAxisName = "Player1_Horizontal";
+                    clickName = "Player1_Click";
                     break;
                 }
             case Player.PlayerID.Player2:
                 {
                     verticalAxisName = "Player2_Vertical";
                     horizontalAxisName = "Player2_Horizontal";
+                    clickName = "Player2_Click";
                     break;
                 }
         }
@@ -48,6 +51,15 @@ public class Movement : MonoBehaviour
     void Update()
     {
         ManageMovement();
+        CheckClick();
+    }
+
+    void CheckClick()
+    {
+        if (Input.GetButtonDown(clickName))
+        {
+            print("click");
+        }
     }
 
     void ManageMovement()
@@ -81,6 +93,7 @@ public class Movement : MonoBehaviour
 
         rb.velocity = new Vector3(velocityX, velocityY);
     }
+
 
     float GetDrag(float velocity)
     {
