@@ -14,9 +14,12 @@ public class Movement : MonoBehaviour {
     string verticalAxisName = "";
     string horizontalAxisName = "";
 
+    Rigidbody rb;
+
     // Use this for initialization
     void Start () {
         Player player = GetComponent<Player>();
+        rb = GetComponent<Rigidbody>();
         if (player == null)
             return;
 
@@ -40,17 +43,18 @@ public class Movement : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         ManageMovement();
-        ApplyDrag();
+      // ApplyDrag();
 	}
 
     void ManageMovement()
     {
-        float horizontalAxis = Input.GetAxis(horizontalAxisName);
-        float verticalAxis = Input.GetAxis(verticalAxisName);
+        float horizontalAxis = Input.GetAxisRaw(horizontalAxisName);
+        float verticalAxis = Input.GetAxisRaw(verticalAxisName);
 
-        velocityX += Mathf.Clamp(horizontalAxis * acceleration, -maxVelocity, maxVelocity);
-        velocityY += Mathf.Clamp(verticalAxis * acceleration, -maxVelocity, maxVelocity);
-        transform.Translate(new Vector2(velocityX, velocityY) * Time.deltaTime);
+        velocityX = Mathf.Clamp(velocityX + horizontalAxis * acceleration, -maxVelocity, maxVelocity);
+        velocityY = Mathf.Clamp(velocityY + verticalAxis * acceleration, -maxVelocity, maxVelocity);
+
+        rb.velocity += new Vector3(velocityX, velocityY) * Time.deltaTime;
     }
 
     void ApplyDrag()
