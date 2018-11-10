@@ -26,7 +26,8 @@ public class MemeDisplay : MonoBehaviour
         Debug.Log(currentMemeOwner.name + " dislikes : " + currentMemeOwner.dislikeCount.ToString());
         foreach (PlayerUI playerUI in playerUIs)
         {
-            playerUI.Refresh();
+            if (playerUI.player == currentMemeOwner)
+                playerUI.Refresh();
         }
     }
 
@@ -37,6 +38,6 @@ public class MemeDisplay : MonoBehaviour
         image.sprite = meme.sprite;
         audioSource.clip = meme.audioClip;
         audioSource.Play();
- 
+
     }
 }
