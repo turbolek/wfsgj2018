@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Bounds : MonoBehaviour {
 
+    public GameObject bound;
+
     public float colDepth = 4f;
     public float zPosition = 0f;
 
@@ -17,10 +19,10 @@ public class Bounds : MonoBehaviour {
     void Start()
     {
         //Generate our empty objects
-        topCollider = new GameObject().transform;
-        bottomCollider = new GameObject().transform;
-        rightCollider = new GameObject().transform;
-        leftCollider = new GameObject().transform;
+        topCollider = Instantiate(bound, transform.position, transform.rotation).transform;
+        bottomCollider = Instantiate(bound, transform.position, transform.rotation).transform;
+        rightCollider = Instantiate(bound, transform.position, transform.rotation).transform;
+        leftCollider = Instantiate(bound, transform.position, transform.rotation).transform;
 
         //Name our objects 
         topCollider.name = "TopCollider";
@@ -46,9 +48,9 @@ public class Bounds : MonoBehaviour {
         screenSize.y = Vector2.Distance(Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 0)), Camera.main.ScreenToWorldPoint(new Vector3(0, Screen.height, 0))) * 0.5f;
 
         //Change our scale and positions to match the edges of the screen...   
-        rightCollider.localScale = new Vector3(colDepth, screenSize.y * 2, colDepth);
+        rightCollider.localScale = new Vector3(colDepth, screenSize.y * 3, colDepth);
         rightCollider.position = new Vector3(cameraPos.x + screenSize.x + (rightCollider.localScale.x * 0.5f), cameraPos.y, zPosition);
-        leftCollider.localScale = new Vector3(colDepth, screenSize.y * 2, colDepth);
+        leftCollider.localScale = new Vector3(colDepth, screenSize.y * 3, colDepth);
         leftCollider.position = new Vector3(cameraPos.x - screenSize.x - (leftCollider.localScale.x * 0.5f), cameraPos.y, zPosition);
         topCollider.localScale = new Vector3(screenSize.x * 2, colDepth, colDepth);
         topCollider.position = new Vector3(cameraPos.x, cameraPos.y + screenSize.y + (topCollider.localScale.y * 0.5f), zPosition);
