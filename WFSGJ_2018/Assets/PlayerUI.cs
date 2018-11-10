@@ -8,7 +8,7 @@ public class PlayerUI : MonoBehaviour
     public Sprite[] avaterState;
     public Image avatarImage;
 
-    public GameObject redBar;
+    public Image greenBar;
     public Player player;
 
     GameplayManager gameplayManager;
@@ -16,13 +16,14 @@ public class PlayerUI : MonoBehaviour
     private void Start()
     {
         gameplayManager = FindObjectOfType<GameplayManager>();
-        redBar.transform.localScale = new Vector3(0f, 1f, 1f);
+        //greenBar.transform.localScale = new Vector3(0f, 1f, 1f);
+        greenBar.fillAmount = 1;
     }
 
     public void Refresh()
     {
         var percent = (float)player.dislikeCount / gameplayManager.playersHealth;
-        redBar.transform.localScale = new Vector3(Mathf.Clamp(percent, 0f, 1f), 1f, 1f);
+        greenBar.fillAmount = Mathf.Clamp01(percent);
 
         if (percent < 0.6f) avatarImage.sprite = avaterState[1];
         else if (percent < 0.25f) avatarImage.sprite = avaterState[2];
