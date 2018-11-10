@@ -54,11 +54,6 @@ public class Fader : MonoBehaviour
             yield return null;
         }
 
-        if (fadeActions != null)
-        {
-            fadeActions();
-        }
-
         if (dots) dots.gameObject.SetActive(true);
         for (int i = 0; i < (int)(bufferingTime / 0.1f); i++)
         {
@@ -68,6 +63,13 @@ public class Fader : MonoBehaviour
             dots.eulerAngles = eulear;
         }
         if (dots) dots.gameObject.SetActive(false);
+
+
+        if (fadeActions != null)
+        {
+            fadeActions();
+        }
+
 
         t = 0;
         startValue = 1;

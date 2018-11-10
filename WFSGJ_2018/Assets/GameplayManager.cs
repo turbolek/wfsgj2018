@@ -12,27 +12,33 @@ public class GameplayManager : MonoBehaviour
     public MemeDisplay memeDisplay;
     public int playersHealth;
 
+    int currentMemeIndex = 0;
+
     public void SetMemes(SelectedSlots player1, SelectedSlots player2)
     {
         for (int i = 0; i < player1.selectedSlot.Count; i++)
         {
-            memes[i].sprite = player1.selectedSlot[i].memeImage.sprite;
-            memes[i].audioClip = player1.selectedSlot[i].memeMusic;
+            memes[2 * i].sprite = player1.selectedSlot[i].memeImage.sprite;
+            memes[2 * i].audioClip = player1.selectedSlot[i].memeMusic;
         }
 
         for (int i = 0; i < player2.selectedSlot.Count; i++)
         {
-            int index = i + player1.selectedSlot.Count;
-            memes[index].sprite = player2.selectedSlot[i].memeImage.sprite;
-            memes[index].audioClip = player2.selectedSlot[i].memeMusic;
+            memes[2 * i + 1].sprite = player2.selectedSlot[i].memeImage.sprite;
+            memes[2 * i + 1].audioClip = player2.selectedSlot[i].memeMusic;
         }
+    }
+
+    private void Start()
+    {
+        currentMemeIndex = 0;
     }
 
     private void Update()
     {
         if (memes.Count < 1)
             return;
-        if (currentMeme = null)
+        if (currentMeme == null)
             SetNextMeme();
 
         if (timer > memeLifetime)
@@ -44,9 +50,20 @@ public class GameplayManager : MonoBehaviour
 
     void SetNextMeme()
     {
-        Meme meme = memes[Random.Range(0, memes.Count)];
-        timer = 0f;
-        currentMeme = meme;
-        memeDisplay.RefreshMeme(currentMeme);
+        if (memes.Count > currentMemeIndex)
+        {
+            currentMeme = memes[currentMemeIndex];
+            currentMemeIndex++;
+            timer = 0f;
+            memeDisplay.RefreshMeme(currentMeme);
+        }
+        else
+            FinishGame();
+
+    }
+
+    void FinishGame()
+    {
+        GameManager.Instance.ShowScreen(ScreenType.endScreen);
     }
 }
