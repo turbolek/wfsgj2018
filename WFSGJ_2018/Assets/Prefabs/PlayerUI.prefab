@@ -337,6 +337,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f3d496949b87344ca9e03029ed592bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  avaterState:
+  - {fileID: 21300000, guid: fab8c89c4c9fad645bcdb64f3b3aaae3, type: 3}
+  - {fileID: 21300000, guid: 20fb4570f0e238e45863935ee6f03f71, type: 3}
+  - {fileID: 21300000, guid: 2cfe1b9c1524b084fb14b86a74306032, type: 3}
+  avatarImage: {fileID: 114560694215748438}
+  redBar: {fileID: 0}
+  player: {fileID: 0}
 --- !u!222 &222052544442861456
 CanvasRenderer:
   m_ObjectHideFlags: 1

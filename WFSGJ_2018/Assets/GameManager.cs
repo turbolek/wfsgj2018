@@ -20,14 +20,17 @@ public class GameManager : MonoBehaviour
         ShowScreen(ScreenType.characterSelect);
     }
 
-    public void ShowScreen(ScreenType screen)
+    public void ShowScreen(ScreenType screen, bool showBuffering = true)
     {
         for (int i = 0; i < screens.Length; i++)
         {
             if (screens[i].ScreenType == screen)
             {
                 _screenIndex = i;
-                Fader.Instance.StartBuffering(2, SwitchScreen);
+                if (showBuffering)
+                    Fader.Instance.StartBuffering(2, SwitchScreen);
+                else
+                    SwitchScreen();
             }
         }
     }
