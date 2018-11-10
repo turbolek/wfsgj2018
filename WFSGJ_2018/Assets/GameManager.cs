@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
     {
         foreach (GameScreen screen in screens)
             screen.Hide();
-        ShowScreen(ScreenType.characterSelect);
+        ShowScreen(ScreenType.mainMenu, false);
     }
 
     public void ShowScreen(ScreenType screen, bool showBuffering = true)

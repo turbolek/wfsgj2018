@@ -52,7 +52,12 @@ public class CharacterSelect : MonoBehaviour
     {
         var mems = playerMems[(int)player];
 
-        if (mems.selectedSlot.Count == 0) return;
+        if (mems.selectedSlot.Count == 0)
+        {
+            if (player == Player.PlayerID.Player1 && playerMems[0].selectedSlot.Count == 0)
+                GameManager.Instance.ShowScreen(ScreenType.mainMenu, false);
+            return;
+        }
 
         mems.selectedSlot[mems.selectedSlot.Count - 1].CancelChoose();
         mems.selectedSlot.RemoveAt(mems.selectedSlot.Count - 1);
