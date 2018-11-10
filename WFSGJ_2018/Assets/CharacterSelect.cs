@@ -21,7 +21,16 @@ public class CharacterSelect : MonoBehaviour
         {
             SelectSlot((Player.PlayerID)i, playerChoose[i]);
         }
-        //SelectSlot((Player.PlayerID)1, playerChoose[1]);
+    }
+
+    public bool PlayersAreReady()
+    {
+        for (int i = 0; i < playerChoose.Length; i++)
+        {
+            if (!playerMems[i].IsReady) return false;
+        }
+
+        return true;
     }
 
     public void ChooseMem(Player.PlayerID player)
@@ -52,14 +61,6 @@ public class CharacterSelect : MonoBehaviour
     {
         var index = playerChoose[(int)player] + 1;
 
-        //while (index < _slots.Length && (_slots[index].choosed || _slots[index].hover.enabled))
-        //{
-        //    index++;
-
-        //    if (index >= _slots.Length)
-        //        return;
-        //}
-
         if (index >= _slots.Length)
             return;
 
@@ -70,14 +71,6 @@ public class CharacterSelect : MonoBehaviour
     {
         var index = playerChoose[(int)player] - 1;
 
-        //while (index >= 0 && (_slots[index].choosed || _slots[index].hover.enabled))
-        //{
-        //    index--;
-
-        //    if (index < 0)
-        //        return;
-        //}
-
         if (index < 0)
             return;
 
@@ -87,11 +80,6 @@ public class CharacterSelect : MonoBehaviour
     public void MoveUp(Player.PlayerID player)
     {
         var index = playerChoose[(int)player] - 4;
-
-        if (index > 0 && (_slots[index].choosed || _slots[index].hover.enabled))
-        {
-            index -= 4;
-        }
 
         if (index < 0)
         {
@@ -105,11 +93,6 @@ public class CharacterSelect : MonoBehaviour
     {
         var index = playerChoose[(int)player] + 4;
 
-        if (index < _slots.Length && (_slots[index].choosed || _slots[index].hover.enabled))
-        {
-            index += 4;
-        }
-
         if (index >= _slots.Length)
         {
             return;
@@ -120,7 +103,7 @@ public class CharacterSelect : MonoBehaviour
 
     void SelectSlot(Player.PlayerID player, int index)
     {
-        _slots[playerChoose[(int)player]].DiselectMem();
+        _slots[playerChoose[(int)player]].DiselectMem(player);
         playerChoose[(int)player] = index;
         _slots[index].SelectMem(player);
     }
@@ -132,13 +115,5 @@ public class SelectedSlots
     public List<MemSlot> selectedSlot;
     public Image[] slot;
 
-    public void ChooseMem()
-    {
-
-    }
-
-    public void CancelChoose()
-    {
-
-    }
+    public bool IsReady { get { return selectedSlot.Count == 0; } }
 }

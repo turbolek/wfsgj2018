@@ -52,6 +52,7 @@ public class Movement : MonoBehaviour
     {
         ManageMovement();
         CheckClick();
+        ManageMass();
     }
 
     void CheckClick()
@@ -103,5 +104,11 @@ public class Movement : MonoBehaviour
         float drag = velocityDrag * -velocity / Mathf.Abs(velocity);
 
         return drag;
+    }
+
+    void ManageMass()
+    {
+
+        rb.mass = Mathf.Clamp(rb.velocity.magnitude, 1f, rb.velocity.magnitude);
     }
 }
