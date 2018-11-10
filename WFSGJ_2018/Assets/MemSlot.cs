@@ -5,34 +5,68 @@ using UnityEngine.UI;
 
 public class MemSlot : MonoBehaviour
 {
-    public Image hover;
-    public Color[] hoverColor;
-
+    public Image memImage;
+    public Image[] hover = new Image[2];
     public bool choosed;
+
+    Material _material;
+    int _grayPropertyId;
 
     private void Awake()
     {
-        hover.enabled = false;
+        _material = new Material(memImage.material);
+        memImage.material = _material;
+        _grayPropertyId = Shader.PropertyToID("_GrayAmount");
+        for (int i = 0; i < hover.Length; i++)
+        {
+            hover[i].enabled = false;
+        }
+    }
+
+    public void SetMem(Sprite mem)
+    {
+        memImage.sprite = mem;
     }
 
     public void SelectMem(Player.PlayerID player)
     {
-        hover.color = hoverColor[(int)(player)];
-        hover.enabled = true;
+        hover[(int)player].enabled = true;
+        CheckHoverFill();
     }
 
-    public void DiselectMem()
+    public void DiselectMem(Player.PlayerID player)
     {
-        hover.enabled = false;
+        hover[(int)player].enabled = false;
+        CheckHoverFill();
+    }
+
+    void CheckHoverFill()
+    {
+        if (hover[0].enabled && hover[1].enabled)
+        {
+            hover[1].fillAmount = 0.5f;
+        }
+        else
+        {
+            hover[1].fillAmount = 1;
+        }
     }
 
     public void ChooseMem(Player.PlayerID player)
     {
         choosed = true;
+        SetGrayed(true);
     }
 
     public void CancelChoose()
     {
         choosed = false;
+        SetGrayed(false);
+    }
+
+    public void SetGrayed(bool state)
+    {
+        if (!memImage || !_material) return;
+        _material.SetFloat(_grayPropertyId, state == true ? 1f : 0f);
     }
 }
