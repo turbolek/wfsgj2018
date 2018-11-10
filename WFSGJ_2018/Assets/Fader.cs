@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class Fader : MonoBehaviour
 {
+    public delegate void FadeAction();
+
     public static Fader Instance { get; private set; }
 
     public Transform dots;
@@ -31,20 +33,12 @@ public class Fader : MonoBehaviour
         if (dots) dots.gameObject.SetActive(false);
     }
 
-    private void Update()
+    public void StartBuffering(float bufferingTime = 2, FadeAction fadeActions = null)
     {
-        if (Input.GetKeyDown(KeyCode.X))
-        {
-            StartBuffering(2);
-        }
+        StartCoroutine(Buffering(bufferingTime, fadeActions));
     }
 
-    public void StartBuffering(float bufferingTime = 2)
-    {
-        StartCoroutine(Buffering(bufferingTime));
-    }
-
-    IEnumerator Buffering(float bufferingTime)
+    IEnumerator Buffering(float bufferingTime, FadeAction fadeActions)
     {
         _active = true;
 
@@ -60,6 +54,10 @@ public class Fader : MonoBehaviour
             yield return null;
         }
 
+        if (fadeActions != null)
+        {
+            fadeActions();
+        }
 
         if (dots) dots.gameObject.SetActive(true);
         for (int i = 0; i < (int)(bufferingTime / 0.1f); i++)

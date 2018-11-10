@@ -111,14 +111,7 @@ public class CharacterSelect : MonoBehaviour
     public void StartGame()
     {
         PlayerMemes.SetMemes(playerMems[0], playerMems[1]);
-        Fader.Instance.StartBuffering(2);
-        StartCoroutine(WaitForLoadScene(1.5f));
-    }
-
-    IEnumerator WaitForLoadScene(float time)
-    {
-        yield return new WaitForSeconds(time);
-        UnityEngine.SceneManagement.SceneManager.LoadScene("MyTube");
+        GameManager.Instance.ShowScreen(ScreenType.gameplay);
     }
 }
 

@@ -5,7 +5,6 @@ using UnityEngine;
 [System.Serializable]
 public class GameplayManager : MonoBehaviour
 {
-
     public List<Meme> memes = new List<Meme>();
     public Meme currentMeme;
     public float memeLifetime;
