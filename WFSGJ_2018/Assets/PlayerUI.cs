@@ -15,10 +15,15 @@ public class PlayerUI : MonoBehaviour
 
     public GameplayManager gameplayManager;
 
+    public bool refreshOnStart = true;
+
     private void Start()
     {
-        avatarImage.sprite = avaterState[0];
-        greenBar.fillAmount = 1;
+        if (refreshOnStart)
+        {
+            avatarImage.sprite = avaterState[0];
+            greenBar.fillAmount = 1;
+        }
         animator = GetComponent<Animator>();
     }
 

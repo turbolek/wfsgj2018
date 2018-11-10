@@ -53,12 +53,12 @@ public class GameplayManager : MonoBehaviour
         if (memes.Count > currentMemeIndex)
         {
             currentMeme = memes[currentMemeIndex];
+            Meme nextMeme = null;
+            if (memes.Count > currentMemeIndex + 1)
+                nextMeme = memes[currentMemeIndex + 1];
             currentMemeIndex++;
             timer = 0f;
 
-            Meme nextMeme = null;
-            if (memes.Count >= currentMemeIndex + 1)
-                nextMeme = memes[currentMemeIndex + 1];
 
             memeDisplay.RefreshMeme(currentMeme, nextMeme);
         }
