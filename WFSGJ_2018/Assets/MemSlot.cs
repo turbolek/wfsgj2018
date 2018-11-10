@@ -7,13 +7,18 @@ public class MemSlot : MonoBehaviour
 {
     public Image memImage, hover;
     public Color[] hoverColor;
-
     public bool choosed;
+
+    Material _material;
+    int _grayPropertyId;
 
     private void Awake()
     {
+        _material = new Material(memImage.material);
+        memImage.material = _material;
+        _grayPropertyId = Shader.PropertyToID("_GrayAmount");
         hover.enabled = false;
-    }
+    }    
 
     public void SetMem(Sprite mem)
     {
@@ -34,10 +39,18 @@ public class MemSlot : MonoBehaviour
     public void ChooseMem(Player.PlayerID player)
     {
         choosed = true;
+        SetGrayed(true);
     }
 
     public void CancelChoose()
     {
         choosed = false;
+        SetGrayed(false);
+    }
+
+    public void SetGrayed(bool state)
+    {
+        if (!memImage || !_material) return;
+        _material.SetFloat(_grayPropertyId, state == true ? 1f : 0f);
     }
 }

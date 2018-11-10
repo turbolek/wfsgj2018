@@ -28,30 +28,34 @@ public class CharacterSelect : MonoBehaviour
     {
         var mems = playerMems[(int)player];
 
-        if (mems.selectedSlot.Count >= mems.slot.Length) return;
+        if (mems.selectedSlot.Count >= mems.slot.Length || _slots[playerChoose[(int)player]].choosed) return;
 
         _slots[playerChoose[(int)player]].ChooseMem(player);
-
-        //Debug.Log(player);
-        //Debug.Log(mems.selectedSlot.Count);
-        //Debug.Log(player);
-
         mems.selectedSlot.Add(_slots[playerChoose[(int)player]]);
         mems.slot[mems.selectedSlot.Count - 1].sprite = _slots[playerChoose[(int)player]].memImage.sprite;
+    }
+
+    public void CancelChooseMem(Player.PlayerID player)
+    {
+        var mems = playerMems[(int)player];
+
+        if (mems.selectedSlot.Count == 0) return;
+
+        mems.selectedSlot[mems.selectedSlot.Count - 1].CancelChoose();
+        mems.selectedSlot.RemoveAt(mems.selectedSlot.Count - 1);
+        mems.slot[mems.selectedSlot.Count].sprite = null;
     }
 
     public void MoveRight(Player.PlayerID player)
     {
         var index = playerChoose[(int)player] + 1;
 
-        if (index < _slots.Length && (_slots[index].choosed || _slots[index].hover.enabled))
+        while (index < _slots.Length && (_slots[index].choosed || _slots[index].hover.enabled))
         {
             index++;
-        }
 
-        if (index >= _slots.Length)
-        {
-            return;
+            if (index >= _slots.Length)
+                return;
         }
 
         SelectSlot(player, index);
@@ -61,14 +65,12 @@ public class CharacterSelect : MonoBehaviour
     {
         var index = playerChoose[(int)player] - 1;
 
-        if (index > 0 && (_slots[index].choosed || _slots[index].hover.enabled))
+        while (index >= 0 && (_slots[index].choosed || _slots[index].hover.enabled))
         {
             index--;
-        }
 
-        if (index < 0)
-        {
-            return;
+            if (index < 0)
+                return;
         }
 
         SelectSlot(player, index);
