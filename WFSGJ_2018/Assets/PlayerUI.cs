@@ -10,6 +10,7 @@ public class PlayerUI : MonoBehaviour
 
     public Image greenBar;
     public Player player;
+    public Text dislikesCount;
     Animator animator;
 
     GameplayManager gameplayManager;
@@ -32,6 +33,7 @@ public class PlayerUI : MonoBehaviour
     {
         var percent = 1 - (float)player.dislikeCount / gameplayManager.playersHealth;
         greenBar.fillAmount = Mathf.Clamp01(percent);
+        dislikesCount.text = player.dislikeCount.ToString();
 
         if (percent < 0.25f) avatarImage.sprite = avaterState[2];
         else if (percent < 0.6f) avatarImage.sprite = avaterState[1];
