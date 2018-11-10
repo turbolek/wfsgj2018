@@ -10,6 +10,10 @@ public class MemeDisplay : MonoBehaviour
     public PlayerUI[] playerUIs;
     public GameplayManager gameplayManager;
 
+    public Slider slider;
+    public Text timeLabel;
+    float timer = 0f;
+
     private void Start()
     {
         image = GetComponent<Image>();
@@ -42,6 +46,16 @@ public class MemeDisplay : MonoBehaviour
         image.sprite = meme.sprite;
         audioSource.clip = meme.audioClip;
         audioSource.Play();
+        timer = 0f;
+    }
 
+    private void Update()
+    {
+        if (currentMemeOwner == null)
+            return;
+
+        timeLabel.text = "00:" + ((int)timer).ToString(("D2"));
+        slider.value = timer / gameplayManager.memeLifetime;
+        timer += Time.deltaTime;
     }
 }
