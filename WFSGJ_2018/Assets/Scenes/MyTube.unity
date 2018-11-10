@@ -259,6 +259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d860c02aebeff094db7565bbd48e6e12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  memeDisplay: {fileID: 1532552105}
 --- !u!1001 &632293163
 Prefab:
   m_ObjectHideFlags: 0
@@ -481,7 +482,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1287428806064360, guid: f2ea5a7ed1b3b8a4cb18719eaf9fd500, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1634063415390966, guid: f2ea5a7ed1b3b8a4cb18719eaf9fd500, type: 2}
       propertyPath: m_IsActive
@@ -668,3 +669,20 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e9e334953f29a94d8fb966eee9d72a5, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &1532552101 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1287428806064360, guid: f2ea5a7ed1b3b8a4cb18719eaf9fd500,
+    type: 2}
+  m_PrefabInternal: {fileID: 956424270}
+--- !u!114 &1532552105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1532552101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5292aa97bda3ee459817377c18249be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentMemeOwner: {fileID: 0}
