@@ -40,7 +40,8 @@ public class PlayerUI : MonoBehaviour
         greenBar.fillAmount = Mathf.Clamp01(percent);
         dislikesCount.text = player.dislikeCount.ToString();
 
-        if (percent < 0.25f) avatarImage.sprite = avaterState[2];
-        else if (percent < 0.6f) avatarImage.sprite = avaterState[1];
+        if (percent < 0.33f) avatarImage.sprite = avaterState[2];
+        else if (percent < 0.66f) avatarImage.sprite = avaterState[1];
+        else  avatarImage.sprite = avaterState[0];
     }
 }

@@ -1,10 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EndScreen : GameScreen
 {
     public PlayerUI[] playersUI;
+
+    public Sprite[] winSprites;
+    public Image winImage;
 
     public override void Show()
     {
@@ -17,6 +21,11 @@ public class EndScreen : GameScreen
             playersUI[i].RefreshStatus();
         }
 
+        if (winImage)
+        {
+            var index = (playersUI[0].player.dislikeCount < playersUI[1].player.dislikeCount) ? 0 : 1;
+            winImage.sprite = winSprites[index];
+        }
         StartCoroutine(WaitForInputUnlock());
     }
 
