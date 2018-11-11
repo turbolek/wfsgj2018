@@ -688,6 +688,7 @@ GameObject:
   - component: {fileID: 130377328}
   - component: {fileID: 130377330}
   - component: {fileID: 130377329}
+  - component: {fileID: 130377331}
   m_Layer: 5
   m_Name: Slot
   m_TagString: Untagged
@@ -733,7 +734,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 3e1db83e85edce84189ae2279f4518f8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 596925f5f87acf54d870125dae4eaa20, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -748,6 +749,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 130377327}
   m_CullTransparentMesh: 0
+--- !u!114 &130377331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 130377327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1200242548, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShowMaskGraphic: 1
 --- !u!1001 &151001109
 Prefab:
   m_ObjectHideFlags: 0
@@ -1702,6 +1715,7 @@ GameObject:
   - component: {fileID: 397995480}
   - component: {fileID: 397995482}
   - component: {fileID: 397995481}
+  - component: {fileID: 397995483}
   m_Layer: 5
   m_Name: Slot
   m_TagString: Untagged
@@ -1747,7 +1761,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 3e1db83e85edce84189ae2279f4518f8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f6af10048f7cb6c46922e761f288583e, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1762,6 +1776,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 397995479}
   m_CullTransparentMesh: 0
+--- !u!114 &397995483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 397995479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1200242548, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShowMaskGraphic: 1
 --- !u!114 &399185495 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114272143712992172, guid: 5e9e334953f29a94d8fb966eee9d72a5,
@@ -5269,6 +5295,7 @@ GameObject:
   - component: {fileID: 1199843600}
   - component: {fileID: 1199843602}
   - component: {fileID: 1199843601}
+  - component: {fileID: 1199843603}
   m_Layer: 5
   m_Name: Slot
   m_TagString: Untagged
@@ -5314,7 +5341,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 3e1db83e85edce84189ae2279f4518f8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f6af10048f7cb6c46922e761f288583e, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -5329,6 +5356,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1199843599}
   m_CullTransparentMesh: 0
+--- !u!114 &1199843603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1199843599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1200242548, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShowMaskGraphic: 1
 --- !u!1 &1206410504
 GameObject:
   m_ObjectHideFlags: 0
@@ -7019,6 +7058,7 @@ GameObject:
   - component: {fileID: 1447739950}
   - component: {fileID: 1447739952}
   - component: {fileID: 1447739951}
+  - component: {fileID: 1447739953}
   m_Layer: 5
   m_Name: Slot
   m_TagString: Untagged
@@ -7064,7 +7104,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 3e1db83e85edce84189ae2279f4518f8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f6af10048f7cb6c46922e761f288583e, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -7079,6 +7119,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1447739949}
   m_CullTransparentMesh: 0
+--- !u!114 &1447739953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1447739949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1200242548, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShowMaskGraphic: 1
 --- !u!1 &1448289462
 GameObject:
   m_ObjectHideFlags: 0
@@ -8276,6 +8328,7 @@ GameObject:
   - component: {fileID: 1820475640}
   - component: {fileID: 1820475642}
   - component: {fileID: 1820475641}
+  - component: {fileID: 1820475643}
   m_Layer: 5
   m_Name: Slot
   m_TagString: Untagged
@@ -8321,7 +8374,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 3e1db83e85edce84189ae2279f4518f8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5a3b0e4d507e9e3409058d7f87680160, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -8336,6 +8389,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1820475639}
   m_CullTransparentMesh: 0
+--- !u!114 &1820475643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1820475639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1200242548, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShowMaskGraphic: 1
 --- !u!1001 &1853777258
 Prefab:
   m_ObjectHideFlags: 0
@@ -9816,6 +9881,7 @@ GameObject:
   - component: {fileID: 2143438549}
   - component: {fileID: 2143438551}
   - component: {fileID: 2143438550}
+  - component: {fileID: 2143438552}
   m_Layer: 5
   m_Name: Slot
   m_TagString: Untagged
@@ -9861,7 +9927,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 3e1db83e85edce84189ae2279f4518f8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 596925f5f87acf54d870125dae4eaa20, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -9876,6 +9942,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2143438548}
   m_CullTransparentMesh: 0
+--- !u!114 &2143438552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2143438548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1200242548, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShowMaskGraphic: 1
 --- !u!1 &2144933840
 GameObject:
   m_ObjectHideFlags: 0
