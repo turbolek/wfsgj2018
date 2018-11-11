@@ -2068,9 +2068,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   avaterState:
-  - {fileID: 21300000, guid: 98546b132690f984da33300950451c81, type: 3}
-  - {fileID: 21300000, guid: 794602d7cfa64834283b2dd218e9fc3e, type: 3}
-  - {fileID: 21300000, guid: 4fce2c0ba9cb43c48a8b1c89c0d6898d, type: 3}
+  - {fileID: 21300000, guid: 70c0e0bdd31b42649a2bae76725e7309, type: 3}
+  - {fileID: 21300000, guid: e60143a38694bf346a17367d28491b65, type: 3}
+  - {fileID: 21300000, guid: d12ed02ea042fdf43a142b2fe4bf217a, type: 3}
   avatarImage: {fileID: 53676575}
   greenBar: {fileID: 1233924534}
   player: {fileID: 245225657}
@@ -5016,19 +5016,19 @@ Prefab:
         type: 2}
       propertyPath: avaterState.Array.data[0]
       value: 
-      objectReference: {fileID: 21300000, guid: 98546b132690f984da33300950451c81,
+      objectReference: {fileID: 21300000, guid: 70c0e0bdd31b42649a2bae76725e7309,
         type: 3}
     - target: {fileID: 114999627770255318, guid: 96e213045d87f9a498ee084cb949d1a1,
         type: 2}
       propertyPath: avaterState.Array.data[1]
       value: 
-      objectReference: {fileID: 21300000, guid: 794602d7cfa64834283b2dd218e9fc3e,
+      objectReference: {fileID: 21300000, guid: e60143a38694bf346a17367d28491b65,
         type: 3}
     - target: {fileID: 114999627770255318, guid: 96e213045d87f9a498ee084cb949d1a1,
         type: 2}
       propertyPath: avaterState.Array.data[2]
       value: 
-      objectReference: {fileID: 21300000, guid: 4fce2c0ba9cb43c48a8b1c89c0d6898d,
+      objectReference: {fileID: 21300000, guid: d12ed02ea042fdf43a142b2fe4bf217a,
         type: 3}
     - target: {fileID: 114999627770255318, guid: 96e213045d87f9a498ee084cb949d1a1,
         type: 2}
