@@ -23,7 +23,7 @@ public class EndScreen : GameScreen
 
         if (winImage)
         {
-            var index = (playersUI[0].player.dislikeCount > playersUI[1].player.dislikeCount) ? 0 : 1;
+            var index = (playersUI[0].player.dislikeCount < playersUI[1].player.dislikeCount) ? 0 : 1;
             winImage.sprite = winSprites[index];
         }
         StartCoroutine(WaitForInputUnlock());
