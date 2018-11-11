@@ -12,17 +12,20 @@ public class ButtonUI : MonoBehaviour
     public Color[] colors;
 
     public UnityEvent onClickEvent;
+    Animator animator;
 
     public void Select()
     {
         if (_active) _active.Diselect();
         _active = this;
-        button.color = colors[1];
+        animator.SetBool("selected", true);
+        //button.color = colors[1];
     }
 
     public void Diselect()
     {
-        button.color = colors[0];
+        animator.SetBool("selected", false);
+        //button.color = colors[0];
     }
 
     public void OnClick()
@@ -34,5 +37,10 @@ public class ButtonUI : MonoBehaviour
     public static void OnClickActive()
     {
         if (_active) _active.OnClick();
+    }
+
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
     }
 }
